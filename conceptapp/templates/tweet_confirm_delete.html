@@ -1,0 +1,26 @@
+<!-- Save this as tweet_confirm_delete.html -->
+{% extends "layout.html" %}
+
+{% block title %}
+This Is New File
+{% endblock %}
+
+{% block content %}
+<style>
+    .deco {
+        margin-top: 2%;
+        margin-left: 25%;
+    }
+    .btn-container {
+        margin-top: 20px;
+        margin-left: 25%;
+    }
+</style>
+
+<h1 class="deco">Are you sure that you want to delete?</h1>
+<form method="POST" class="btn-container">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-success" href="{% url 'tweet_list' %}">Cancel</a>
+</form>
+{% endblock %}
